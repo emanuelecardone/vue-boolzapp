@@ -14,12 +14,32 @@
 .grey_app_bg{
     background-color: #eaeaea;
 }
+.user_img_box{
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user_img_box img{
+    width: 50px;
+    height: 50px;
+}
 
 
 /* HEADER */
 header{
     height: 7.5%;
 }
+/* Left Header */
+.left_header_user_wrapper{
+    gap: 10px;
+}
+.left_header_icons_wrapper{
+    color: #b1b1b1;
+    gap: 20px;
+}
+/* Right Header */
 .right_header{
     border-left: 1.5px solid #d9d9d9;
 }
