@@ -100,10 +100,6 @@ const app = new Vue(
             // Funzione per rimuovere la "search" icon quando scrivo nella searchbox
             removeSearchIcon: function(){
                 this.searchIcon = false;
-            },
-            // Funzione per aggiungere la classe "clicked" ai contatti nell'Aside
-            clickContact: function(){
-                
             }
         },
 
