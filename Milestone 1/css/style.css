@@ -68,12 +68,28 @@ main,
     text-decoration: underline;
 }
 /* Search */
+.search_chat_wrapper{
+    background-color: #fafafa;
+}
 .search_icon_fix{
     top: 50%;
     left: 5%;
     transform: translateY(-50%);
     color: #bfc1c4;
 }
+/* Contacts */
+.contact_item{
+    border-top: 1px solid #f7f7f7;
+    gap: 20px;
+}
+.contact_item.clicked{
+    background-color: #e9ebea;
+}
+ul .user_img_box img{
+    width: 60px;
+    height: 60px;
+}
+
 /* Chat */
 .chat_bg{
     background-image: url(../img/mine.jpg);
