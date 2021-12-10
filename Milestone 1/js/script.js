@@ -91,11 +91,15 @@ const app = new Vue(
                         }
                     ],
                 },
-            ]
+            ],
+            searchIcon: true
         },
 
         methods: {
-
+            // Funzione per rimuovere la "search" icon quando scrivo nella searchbox
+            removeSearchIcon: function(){
+                this.searchIcon = false;
+            }
         },
 
         created: function(){
