@@ -118,6 +118,8 @@ const app = new Vue(
                         status: 'sent'
                     }
                 );
+                // Debug per svuotare la input area all'invio
+                this.userMessage = '';
             },
             //Funzione per cambiare chat attiva
             switchChat: function(thisContactIndex){
