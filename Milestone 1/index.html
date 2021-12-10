@@ -49,10 +49,10 @@
                     <div class="right_header w_65 h-100 d-flex justify-content-between align-items-center px-3">
                         <div class="right_header_user_wrapper d-flex align-items-center">
                             <div class="user_img_box">
-                                <img :src="'img/avatar' + chatsList[currentActiveChat].avatar + '.jpg'" alt="">
+                                <img :src="'img/avatar' + chatsList[currentActiveChat].avatar + '.jpg'" :alt="'Immagine profilo di ' + chatsList[currentActiveChat].name">
                             </div>
                             <div class="user_img_text_box d-flex flex-column justify-content-center">
-                                <span class="d-block fw-bolder fs-5">Nome Utente</span>
+                                <span class="d-block fw-bolder fs-5">{{chatsList[currentActiveChat].name}}</span>
                                 <span class="user_img_text">Ultimo accesso oggi alle</span>
                             </div>
                         </div>
