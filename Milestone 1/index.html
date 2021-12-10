@@ -84,7 +84,7 @@
                         </div>
                         <div class="search_chat_wrapper w-100 h_5 p-2 position-relative">
                             <i v-if="searchIcon" class="search_icon_fix fas fa-search position-absolute"></i>
-                            <input @keyup="removeSearchIcon" class="w-100 h-100 form-control form-control-sm" type="search" placeholder="              Cerca o inizia una nuova chat" aria-label=".form-control-sm example">
+                            <input @keyup="removeSearchIcon" class="w-100 h-100 form-control form-control-sm" type="search" placeholder="              Cerca o inizia una nuova chat">
                         </div>
                         <div class="contacts_wrapper w-100 h_85">
                             <ul class="aside_contacts_wrapper w-100 h-100 p-0">
@@ -109,8 +109,10 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="chat_input_wrapper w-100 h_10">
-
+                        <div class="chat_input_wrapper w-100 h_10 d-flex align-items-center">
+                            <i class="fs-4 far fa-smile"></i>
+                            <input type="text" class="form-control w_80" placeholder="Scrivi un messaggio">
+                            <i class="fs-4 fas fa-microphone"></i>
                         </div>
                     </div>
                     
