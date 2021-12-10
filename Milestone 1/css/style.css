@@ -67,6 +67,13 @@ main,
     color: #517989;
     text-decoration: underline;
 }
+/* Search */
+.search_icon_fix{
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    color: #bfc1c4;
+}
 /* Chat */
 .chat_bg{
     background-image: url(../img/mine.jpg);
