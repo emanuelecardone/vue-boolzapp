@@ -54,6 +54,19 @@ main,
 .chat_content_wrapper{
     height: 92.5%;
 }
+/* Notifications */
+.notifications_wrapper{
+    background-color: #8edafb;
+    gap: 10px;
+}
+.notifications_img_box{
+    color: #8edafb;
+    border-radius: 50%;
+}
+.notifications_lower_text{
+    color: #517989;
+    text-decoration: underline;
+}
 /* Chat */
 .chat_bg{
     background-image: url(../img/mine.jpg);
