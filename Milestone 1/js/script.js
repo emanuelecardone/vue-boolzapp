@@ -118,6 +118,10 @@ const app = new Vue(
                         status: 'sent'
                     }
                 );
+            },
+            //Funzione per cambiare chat attiva
+            switchChat: function(thisContactIndex){
+                this.currentActiveChat = thisContactIndex;
             }
         },
 
