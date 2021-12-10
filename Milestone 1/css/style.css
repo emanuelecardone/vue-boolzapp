@@ -1,11 +1,45 @@
 /* COMMON */
+.upper_bg{
+    background-color: #009688;
+}
+.lower_bg{
+    background-color: #dbdbd3;
+}
+.main_app{
+    top: 2.5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+.grey_app_bg{
+    background-color: #eaeaea;
+}
 
 
 /* HEADER */
+header{
+    height: 7.5%;
+}
+.left_header{
+    border-right: 2px solid #d9d9d9;
+}
 
 
 /* MAIN */
-
+main,
+.chat_content_wrapper{
+    height: 92.5%;
+}
+/* Chat */
+.chat_bg{
+    background-image: url(../img/mine.jpg);
+    background-size: contain;
+    background-repeat: repeat;
+}
+.chat_input_wrapper{
+    background-color: #f3eeea;
+    height: 7.5%;
+} 
 
 /* FOOTER */
 
