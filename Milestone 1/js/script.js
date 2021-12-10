@@ -93,13 +93,31 @@ const app = new Vue(
                 },
             ],
             searchIcon: true,
-            contactClicked: false
+            contactClicked: false,
+            userMessage: ''
         },
 
         methods: {
             // Funzione per rimuovere la "search" icon quando scrivo nella searchbox
             removeSearchIcon: function(){
                 this.searchIcon = false;
+            },
+            // Funzione per inviare un nuovo messaggio (con fix dello 0)
+            newMessage: function(){
+                const thisDay = (new Date().getDay() < 10) ? `0${new Date().getDay()}` : new Date().getDay();
+                const thisMonth = (new Date().getMonth() < 10) ? `0${new Date().getMonth()}` : new Date().getMonth();
+                const thisYear = (new Date().getFullYear() < 10) ? `0${new Date().getFullYear()}` : new Date().getFullYear();
+                const thisHours = (new Date().getHours() < 10) ? `0${new Date().getHours()}` : new Date().getHours();
+                const thisMinutes = (new Date().getMinutes() < 10) ? `0${new Date().getMinutes()}` : new Date().getMinutes();
+                const thisSeconds = (new Date().getSeconds() < 10) ? `0${new Date().getSeconds()}` : new Date().getSeconds();
+
+                this.chatsList[this.currentActiveChat].messages.push(
+                    {
+                        date: thisDay + '/' + thisMonth + '/' + thisYear + ' ' + thisHours + ':' + thisMinutes + ':' + thisSeconds,
+                        text: this.userMessage,
+                        status: 'sent'
+                    }
+                );
             }
         },
 

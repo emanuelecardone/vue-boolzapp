@@ -111,7 +111,7 @@
                         </div>
                         <div class="chat_input_wrapper w-100 h_10 d-flex align-items-center">
                             <i class="fs-4 far fa-smile"></i>
-                            <input type="text" class="form-control w_80" placeholder="Scrivi un messaggio">
+                            <input @keyup.enter="newMessage" v-model="userMessage" type="text" class="form-control w_80 h_70" placeholder="Scrivi un messaggio">
                             <i class="fs-4 fas fa-microphone"></i>
                         </div>
                     </div>
