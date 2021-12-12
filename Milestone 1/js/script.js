@@ -104,16 +104,12 @@ const app = new Vue(
             },
             // Funzione per inviare un nuovo messaggio (con fix dello 0)
             newMessage: function(){
-                const thisDay = (new Date().getDay() < 10) ? `0${new Date().getDay()}` : new Date().getDay();
-                const thisMonth = (new Date().getMonth() < 10) ? `0${new Date().getMonth()}` : new Date().getMonth();
-                const thisYear = (new Date().getFullYear() < 10) ? `0${new Date().getFullYear()}` : new Date().getFullYear();
-                const thisHours = (new Date().getHours() < 10) ? `0${new Date().getHours()}` : new Date().getHours();
-                const thisMinutes = (new Date().getMinutes() < 10) ? `0${new Date().getMinutes()}` : new Date().getMinutes();
-                const thisSeconds = (new Date().getSeconds() < 10) ? `0${new Date().getSeconds()}` : new Date().getSeconds();
+
+                const timeAndDay = dayjs().format("DD/MM/YYYY HH:mm:ss");
 
                 this.chatsList[this.currentActiveChat].messages.push(
                     {
-                        date: thisDay + '/' + thisMonth + '/' + thisYear + ' ' + thisHours + ':' + thisMinutes + ':' + thisSeconds,
+                        date: timeAndDay,
                         text: this.userMessage,
                         status: 'sent'
                     }
