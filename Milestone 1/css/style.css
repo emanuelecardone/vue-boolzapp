@@ -1,6 +1,6 @@
 /* COMMON */
 .app-container{
-    background: linear-gradient(#009688 15%, #dddbd1 15% 57.5%,#d2dbdb 57.5%);
+    background: linear-gradient(#009688 15%, #dddbd1, #d2dbdb 15%);
 }
 .upper_bg{
     background-color: #009688;
