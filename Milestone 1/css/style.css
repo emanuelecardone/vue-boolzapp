@@ -8,12 +8,6 @@
 .lower_bg{
     background-color: #dbdbd3;
 }
-.main_app{
-    top: 2.5%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-}
 .grey_app_bg{
     background-color: #eaeaea;
 }
