@@ -66,15 +66,18 @@ main,
     background-color: #fafafa;
 }
 .search_input{
-    padding-left: 10%;
+    padding-left: 7.5%;
 }
 .search_icon_fix{
     top: 50%;
-    left: 5%;
+    left: 2.5%;
     transform: translateY(-50%);
     color: #bfc1c4;
 }
 /* Contacts */
+.contacts_wrapper{
+    overflow-y: auto;
+}
 .contact_item{
     border-top: 1px solid #f7f7f7;
     gap: 20px;
