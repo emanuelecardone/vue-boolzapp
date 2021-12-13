@@ -102,6 +102,7 @@ ul .user_img_box img{
 .chat_message_item{
     border-radius: 10px;
     min-width: 40%;
+    max-width: 90%;
 }
 .user_message{
     background-color: #d5f9ba;
