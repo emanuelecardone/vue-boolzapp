@@ -1,7 +1,3 @@
-// Milestone 1
-// Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
-// Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
-
 Vue.config.devtools = true;
 
 const app = new Vue(
@@ -96,10 +92,41 @@ const app = new Vue(
                     ],
                 },
             ],
+            searchIcon: true,
+            contactClicked: false,
+            userMessage: ''
         },
 
         methods: {
-            
+            // Funzione per inviare un nuovo messaggio 
+            newMessage: function(){
+
+                const timeAndDay = dayjs().format("DD/MM/YYYY HH:mm:ss");
+
+                this.chatsList[this.currentActiveChat].messages.push(
+                    {
+                        date: timeAndDay,
+                        text: this.userMessage,
+                        status: 'sent'
+                    }
+                );
+                // Debug per svuotare la input area all'invio
+                this.userMessage = '';
+                // Faccio partire la funzione per ricevere il messaggio con ritardo di un secondo
+                this.getMessageClock = setTimeout(() => {
+                    this.chatsList[this.currentActiveChat].messages.push(
+                        {
+                            date: timeAndDay,
+                            text: 'Okay',
+                            status: 'received'
+                        }
+                    );
+                }, 1000);
+            },
+            // Funzione per cambiare chat attiva
+            switchChat: function(thisContactIndex){
+                this.currentActiveChat = thisContactIndex;
+            }
         },
 
         created: function(){

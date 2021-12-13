@@ -87,8 +87,8 @@
                         </div>
                         <div class="contacts_wrapper w-100">
                             <ul class="aside_contacts_wrapper w-100 h-100 p-0">
-                                <!-- Queste li vengono stampate in base al numero di chat -->
-                                <li v-for="(contactElement, contactIndex) in chatsList" class="contact_item d-flex py-3 ps-4" :class="{'clicked': contactIndex === currentActiveChat}">
+                                <!-- Queste li vengono stampate in base al numero di chat, al click viene cambiata la chat corrente -->
+                                <li v-if="contactElement.visible" v-for="(contactElement, contactIndex) in chatsList" @click="switchChat(contactIndex)" class="contact_item d-flex py-3 ps-4" :class="{'clicked': contactIndex === currentActiveChat}">
                                     <div class="user_img_box">
                                         <!-- Immagine con sorgente e alt impostati per ogni chat dell'array in modo ciclico -->
                                         <img :src="'img/avatar' + contactElement.avatar + '.jpg'" :alt="'Immagine profilo di ' + contactElement.name">
@@ -114,7 +114,7 @@
                         </div>
                         <div class="chat_input_wrapper w-100 h_75p d-flex align-items-center">
                             <i class="fs-4 far fa-smile"></i>
-                            <!-- Input che permetterà    di inviare nuovi messaggi quando si schiaccia "Enter" -->
+                            <!-- Input che permetterà di inviare nuovi messaggi quando si schiaccia "Enter" -->
                             <input type="text" class="form-control w_80 h_70" placeholder="Scrivi un messaggio">
                             <i class="fs-4 fas fa-microphone"></i>
                         </div>

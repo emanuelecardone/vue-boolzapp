@@ -1,0 +1,139 @@
+/* COMMON */
+.app-container{
+    background: linear-gradient(#009688 15%, #dddbd1, #d2dbdb 15%);
+    min-width: 950px;
+}
+.grey_app_bg{
+    background-color: #eaeaea;
+}
+.user_img_box{
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user_img_box img{
+    width: 50px;
+    height: 50px;
+}
+ul{
+    list-style-type: none;
+}
+
+
+/* HEADER */
+header{
+    height: 7.5%;
+}
+/* Left Header */
+.left_header_user_wrapper{
+    gap: 10px;
+}
+.left_header_icons_wrapper,
+.right_header_icons_wrapper{
+    color: #b1b1b1;
+    gap: 20px;
+}
+/* Right Header */
+.right_header{
+    border-left: 1.5px solid #d9d9d9;
+}
+.right_header_user_wrapper{
+    gap: 20px;
+}
+
+
+/* MAIN */
+main,
+.chat_content_wrapper{
+    height: 92.5%;
+}
+/* Notifications */
+.notifications_wrapper{
+    background-color: #8edafb;
+    gap: 10px;
+}
+.notifications_img_box{
+    color: #8edafb;
+    border-radius: 50%;
+}
+.notifications_lower_text{
+    color: #517989;
+}
+/* Search */
+.search_chat_wrapper{
+    background-color: #fafafa;
+}
+.search_input{
+    padding-left: 7.5%;
+}
+.search_icon_fix{
+    top: 50%;
+    left: 2.5%;
+    transform: translateY(-50%);
+    color: #bfc1c4;
+}
+/* Contacts */
+.contacts_wrapper{
+    overflow-y: auto;
+}
+.contact_item{
+    border-top: 1px solid #f7f7f7;
+    gap: 20px;
+    cursor: pointer;
+}
+.contact_item.clicked{
+    background-color: #e9ebea;
+}
+ul .user_img_box img{
+    width: 60px;
+    height: 60px;
+}
+
+/* Chat */
+.chat_bg{
+    background-image: url(../img/mine.jpg);
+    background-size: contain;
+    background-repeat: repeat;
+}
+.chat_content_wrapper{
+    padding: 5% 10%;
+    overflow-y: auto;
+    height: calc(100% - 75px);
+}
+.chat_input_wrapper{
+    background-color: #f3eeea;
+} 
+.chat_message_item{
+    border-radius: 10px;
+    min-width: 40%;
+    max-width: 90%;
+}
+.user_message{
+    background-color: #d5f9ba;
+    align-self: flex-end;
+}
+.contact_message{
+    background-color: white;
+    align-self: flex-start;
+}
+.chat_date{
+    font-size: 10px;
+    color: #c0c3c5;
+}
+.chat_input_wrapper{
+    justify-content: space-evenly;
+    color: #6a7376;
+}
+
+/* FOOTER */
+
+
+/* HOVER */
+
+
+/* ANIMAZIONI */
+
+
+/* MEDIA */
