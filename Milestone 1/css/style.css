@@ -2,12 +2,6 @@
 .app-container{
     background: linear-gradient(#009688 15%, #dddbd1, #d2dbdb 15%);
 }
-.upper_bg{
-    background-color: #009688;
-}
-.lower_bg{
-    background-color: #dbdbd3;
-}
 .grey_app_bg{
     background-color: #eaeaea;
 }
