@@ -106,6 +106,7 @@ ul .user_img_box img{
 } 
 .chat_message_item{
     border-radius: 10px;
+    min-width: 40%;
 }
 .user_message{
     background-color: #d5f9ba;
@@ -113,6 +114,7 @@ ul .user_img_box img{
 }
 .contact_message{
     background-color: white;
+    align-self: flex-start;
 }
 .chat_date{
     font-size: 10px;
