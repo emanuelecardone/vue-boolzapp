@@ -86,7 +86,7 @@
                                 <input class="search_input w-100 h-100 form-control form-control-sm" type="search" placeholder="Cerca o inizia una nuova chat">
                             </div>
                         </div>
-                        <div class="contacts_wrapper w-100 h_85">
+                        <div class="contacts_wrapper w-100">
                             <ul class="aside_contacts_wrapper w-100 h-100 p-0">
                                 <!-- Queste li vengono stampate in base al numero di chat, al click viene cambiata la chat corrente -->
                                 <li v-for="(contactElement, contactIndex) in chatsList" @click="switchChat(contactIndex)" class="contact_item d-flex py-3 ps-4" :class="{'clicked': contactIndex === currentActiveChat}">
@@ -102,7 +102,7 @@
 
                     <!-- Chat -->
                     <div class="chat_wrapper w_65 h-100 chat_bg">
-                        <div class="chat_content_wrapper w-100 h_90">
+                        <div class="chat_content_wrapper w-100">
                             <ul class="chat_messages_list p-0 d-flex flex-column">
                                 <!-- Elementi ciclati in base ai messaggi con l'utente selezionato e variano in base all'invio di utente o contatto  -->
                                 <li v-for="(chatElement, chatIndex) in chatsList[currentActiveChat].messages" class="chat_message_item mb-2" :class="{'user_message': chatElement.status === 'sent', 'contact_message': chatElement.status === 'received'}">
@@ -113,7 +113,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="chat_input_wrapper w-100 h_10 d-flex align-items-center">
+                        <div class="chat_input_wrapper w-100 h_75p d-flex align-items-center">
                             <i class="fs-4 far fa-smile"></i>
                             <!-- Input che permette di inviare nuovi messaggi quando si schiaccia "Enter" -->
                             <input @keyup.enter="newMessage" v-model="userMessage" type="text" class="form-control w_80 h_70" placeholder="Scrivi un messaggio">

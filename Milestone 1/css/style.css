@@ -100,10 +100,10 @@ ul .user_img_box img{
 .chat_content_wrapper{
     padding: 5% 10%;
     overflow-y: auto;
+    height: calc(100% - 75px);
 }
 .chat_input_wrapper{
     background-color: #f3eeea;
-    height: 7.5%;
 } 
 .chat_message_item{
     border-radius: 10px;
