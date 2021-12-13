@@ -99,6 +99,7 @@ ul .user_img_box img{
 }
 .chat_content_wrapper{
     padding: 5% 10%;
+    overflow-y: auto;
 }
 .chat_input_wrapper{
     background-color: #f3eeea;
