@@ -1,6 +1,7 @@
 /* COMMON */
 .app-container{
     background: linear-gradient(#009688 15%, #dddbd1, #d2dbdb 15%);
+    min-width: 950px;
 }
 .grey_app_bg{
     background-color: #eaeaea;
