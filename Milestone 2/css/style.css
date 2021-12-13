@@ -45,8 +45,7 @@ header{
 
 
 /* MAIN */
-main,
-.chat_content_wrapper{
+main{
     height: 92.5%;
 }
 /* Notifications */
