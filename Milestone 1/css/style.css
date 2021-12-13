@@ -60,11 +60,13 @@ main,
 }
 .notifications_lower_text{
     color: #517989;
-    text-decoration: underline;
 }
 /* Search */
 .search_chat_wrapper{
     background-color: #fafafa;
+}
+.search_input{
+    padding-left: 10%;
 }
 .search_icon_fix{
     top: 50%;

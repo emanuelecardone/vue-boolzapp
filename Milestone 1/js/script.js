@@ -98,11 +98,7 @@ const app = new Vue(
         },
 
         methods: {
-            // Funzione per rimuovere la "search" icon quando scrivo nella searchbox
-            removeSearchIcon: function(){
-                this.searchIcon = false;
-            },
-            // Funzione per inviare un nuovo messaggio (con fix dello 0)
+            // Funzione per inviare un nuovo messaggio 
             newMessage: function(){
 
                 const timeAndDay = dayjs().format("DD/MM/YYYY HH:mm:ss");
