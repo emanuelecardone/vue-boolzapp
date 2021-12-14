@@ -115,8 +115,9 @@
                                 <!-- Elementi ciclati in base ai messaggi con l'utente selezionato e variano in base all'invio di utente o contatto  -->
                                 <li v-for="(chatElement, chatIndex) in chatsList[currentActiveChat].messages" class="chat_message_item mb-2" :class="{'user_message': chatElement.status === 'sent', 'contact_message': chatElement.status === 'received'}">
                                     <div class="chat_message_wrapper ps-3 pe-1 pt-3 pb-1 position-relative">
-                                        <i class="delete_msg_arrow fas fa-chevron-down position-absolute"></i>
-                                        <div class="delete_msg_box d-flex flex-column justify-content-center align-items-center bg-white p-4 position-absolute">
+                                        <!-- Il click sulla arrow mostrerà/nasconderà il box per cancellare il messaggio -->
+                                        <i @click="showDeleteBox" class="delete_msg_arrow fas fa-chevron-down position-absolute"></i>
+                                        <div class="delete_msg_box flex-column justify-content-center align-items-center bg-white p-4 position-absolute" :class="{'d-flex': showBox, 'd-none': showBox === false}">
                                             <span>Message info</span>
                                             <span>Delete message</span>
                                         </div>
