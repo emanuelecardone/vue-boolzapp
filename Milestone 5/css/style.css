@@ -139,11 +139,31 @@ ul .user_img_box img{
     justify-content: space-evenly;
     color: #6a7376;
 }
+.delete_msg_arrow_wrapper{
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    z-index: 2000;
+    /* display: none; */
+}
+.user_message .delete_msg_arrow_wrapper{
+    background-color: red;
+}
+.contact_message .delete_msg_arrow_wrapper{
+    background-color: white;
+}
+.delete_msg_arrow{
+    cursor: pointer;
+}
 
 /* FOOTER */
 
 
 /* HOVER */
+.chat_message_item:hover .delete_msg_arrow_wrapper{
+    display: flex;
+}
 
 
 /* ANIMAZIONI */
