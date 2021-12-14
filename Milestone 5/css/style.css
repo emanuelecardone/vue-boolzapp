@@ -95,6 +95,15 @@ ul .user_img_box img{
 .contact_name_last_msg span{
     line-height: 30px;
 }
+.last_msg_date{
+    top: 5%;
+    right: 5%;
+}
+.last_msg,
+.last_msg_date{
+    color: #b6b9bc;
+}
+
 
 /* Chat */
 .chat_bg{

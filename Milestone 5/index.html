@@ -89,17 +89,19 @@
                         <div class="contacts_wrapper w-100">
                             <ul class="aside_contacts_wrapper w-100 h-100 p-0">
                                 <!-- Queste li vengono stampate in base al numero di chat, al click viene cambiata la chat corrente, e se si usa la search input vengono stampate solo se contengono ciò che digito in input -->
-                                <li v-if="contactElement.visible" v-for="(contactElement, contactIndex) in chatsList" @click="switchChat(contactIndex)" class="contact_item d-flex py-3 ps-4" :class="{'clicked': contactIndex === currentActiveChat}">
+                                <li v-if="contactElement.visible" v-for="(contactElement, contactIndex) in chatsList" @click="switchChat(contactIndex)" class="contact_item d-flex py-3 ps-4 position-relative" :class="{'clicked': contactIndex === currentActiveChat}">
                                     <div class="user_img_box">
                                         <!-- Immagine con sorgente e alt impostati per ogni chat dell'array in modo ciclico -->
                                         <img :src="'img/avatar' + contactElement.avatar + '.jpg'" :alt="'Immagine profilo di ' + contactElement.name">
                                     </div>
                                     <div class="contact_name_last_msg d-flex flex-column">
                                         <span class="fs-4">{{contactElement.name}}</span>
-                                        <span class="last_msg">
+                                        <span class="last_msg fs-6">
+                                            <!-- Nello span verrà stampato il testo dell'ultimo elemento della key "messages" fino a un massimo di 20 caratteri (grazie al substring) -->
                                             {{contactElement.messages[contactElement.messages.length - 1].text.substring(0, lastMsgMaxCharacters)}} ...
                                         </span>
                                     </div>
+                                    <span class="last_msg_date position-absolute fs-6">{{contactElement.messages[contactElement.messages.length - 1].date}}</span>
                                 </li>
                             </ul>
                         </div>
