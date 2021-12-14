@@ -48,7 +48,7 @@
                         <div class="right_header_user_wrapper d-flex align-items-center">
                             <div class="user_img_box">
                                 <!-- La sorgente viene presa dalla foto utente della chat attiva, idem per l'alt -->
-                                <img :src="'img/avatar' + chatsList[currentActiveChat].avatar + '.jpg'" :alt="'Immagine profilo di ' + chatsList[currentActiveChat].name">
+                                <img :src="getSource(chatsList[currentActiveChat].avatar)" :alt="getAlt(chatsList[currentActiveChat].name)">
                             </div>
                             <div class="user_img_text_box d-flex flex-column justify-content-center">
                                 <span class="user_img_upper_text d-block fw-bolder fs-4">{{chatsList[currentActiveChat].name}}</span>
@@ -89,10 +89,10 @@
                         <div class="contacts_wrapper w-100">
                             <ul class="aside_contacts_wrapper w-100 h-100 p-0">
                                 <!-- Queste li vengono stampate in base al numero di chat, al click viene cambiata la chat corrente, e se si usa la search input vengono stampate solo se contengono ciò che digito in input -->
-                                <li v-if="contactElement.visible" v-for="(contactElement, contactIndex) in chatsList" @click="switchChat(contactIndex)" class="contact_item d-flex py-3 ps-4 position-relative" :class="{'clicked': contactIndex === currentActiveChat}">
+                                <li v-if="contactElement.visible" v-for="(contactElement, contactIndex) in chatsList" @click="switchChat(contactIndex)" class="contact_item d-flex align-items-center py-3 ps-4 position-relative" :class="{'clicked': contactIndex === currentActiveChat}">
                                     <div class="user_img_box">
                                         <!-- Immagine con sorgente e alt impostati per ogni chat dell'array in modo ciclico -->
-                                        <img :src="'img/avatar' + contactElement.avatar + '.jpg'" :alt="'Immagine profilo di ' + contactElement.name">
+                                        <img :src="getSource(contactElement.avatar)" :alt="getAlt(contactElement.name)">
                                     </div>
                                     <div class="contact_name_last_msg d-flex flex-column">
                                         <span class="fs-4">{{contactElement.name}}</span>

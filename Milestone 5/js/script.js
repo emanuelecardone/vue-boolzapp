@@ -144,11 +144,13 @@ const app = new Vue(
             },
             // Funzione per far apparire la box per il "Delete message" al click sulla arrow (toggle)
             showDeleteBox: function(thisChatIndex){
-                // Per evitare di aprire tutti i box, verrà aperto quello che corrisponde col chatIndexShow
-                this.chatIndexShow = thisChatIndex;
-                
-                this.showBox = !this.showBox;
-                
+                if(this.chatIndexShow !== thisChatIndex){
+                    // Per evitare di aprire tutti i box, verrà aperto quello che corrisponde col chatIndexShow
+                    this.chatIndexShow = thisChatIndex;
+                    this.showBox = true;
+                } else{
+                    this.showBox = !this.showBox;
+                }
             },
             // Funzione per eliminare il messaggio selezionato al click su "Delete message"
             // Mi prendo l'indice del messaggio per far capire a splice l'indice del messaggio da eliminare
@@ -156,6 +158,14 @@ const app = new Vue(
                 this.chatsList[this.currentActiveChat].messages.splice(thisChatIndex,1);
                 // Debug per evitare che la tendina rimanga aperta sul messaggio successivo al delete di uno
                 this.chatIndexShow = null;
+            },
+            // Funzione per generare la src di un'immagine
+            getSource: function(thisAvatar){
+                return 'img/avatar' + thisAvatar + '.jpg';
+            },
+            // Funzione per generare l'alt di un'immagine
+            getAlt: function(thisName){
+                return 'Immagine di ' + thisName;
             }
         },
 

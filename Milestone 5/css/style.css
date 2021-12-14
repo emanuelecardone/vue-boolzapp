@@ -59,6 +59,7 @@ main{
 .notifications_img_box{
     color: #8edafb;
     border-radius: 50%;
+    flex-shrink: 0;
 }
 .notifications_lower_text{
     color: #517989;
@@ -92,12 +93,9 @@ ul .user_img_box img{
     width: 75px;
     height: 75px;
 }
-.contact_name_last_msg span{
-    line-height: 30px;
-}
 .last_msg_date{
-    top: 5%;
-    right: 5%;
+    top: 2.5%;
+    right: 2.5%;
 }
 .last_msg,
 .last_msg_date{
