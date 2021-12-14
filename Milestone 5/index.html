@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/frameworksizespace.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+    <div id="root">
+
+        <div class="app-container w-100 vh-100 d-flex justify-content-center align-items-center">
+
+            <div class="main_app w_80 h_95">
+
+
+                <!-- HEADER -->
+                <header class="w-100 grey_app_bg d-flex">   
+
+                    <!-- Left Header -->
+                    <div class="left_header w_35 h-100 d-flex justify-content-between align-items-center px-3">
+                        <div class="left_header_user_wrapper d-flex align-items-center">
+                            <div class="user_img_box">
+                                <img src="img/avatar_io.jpg" alt="Immagine profilo utente">
+                            </div>
+                            <span class="user_img_text fs-4">
+                                Nome Utente
+                            </span>
+                        </div>
+                        <div class="left_header_icons_wrapper d-flex justify-content-around align-items-center fs-4">
+                            <i class="fas fa-circle-notch"></i>
+                            <i class="fas fa-comment-alt"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+
+                    <!-- Right Header -->
+                    <div class="right_header w_65 h-100 d-flex justify-content-between align-items-center px-3">
+                        <div class="right_header_user_wrapper d-flex align-items-center">
+                            <div class="user_img_box">
+                                <!-- La sorgente viene presa dalla foto utente della chat attiva, idem per l'alt -->
+                                <img :src="'img/avatar' + chatsList[currentActiveChat].avatar + '.jpg'" :alt="'Immagine profilo di ' + chatsList[currentActiveChat].name">
+                            </div>
+                            <div class="user_img_text_box d-flex flex-column justify-content-center">
+                                <span class="user_img_upper_text d-block fw-bolder fs-4">{{chatsList[currentActiveChat].name}}</span>
+                                <span class="user_img_lower_text">Ultimo accesso oggi alle</span>
+                            </div>
+                        </div>
+                        <div class="right_header_icons_wrapper d-flex justify-content-around align-items-center fs-4">
+                            <i class="fas fa-search"></i>
+                            <i class="fas fa-paperclip"></i>
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                    </div>
+
+                </header>
+
+
+                <!-- MAIN -->
+                <main class="w-100 d-flex">
+
+                    <!-- Aside -->
+                    <aside class="contacts_wrapper w_35 h-100 bg-white">
+                        <div class="notifications_wrapper w-100 py-3 ps-4 d-flex align-items-center">
+                            <div class="notifications_img_box d-flex justify-content-center align-items-center w_75p h_75p bg-white">
+                                <i class="fas fa-bell-slash fs-3"></i>
+                            </div>
+                            <div class="notifications_text_box d-flex flex-column justify-content-center">
+                                <span class="notifications_upper_text d-block fw-bolder fs-4">Ricevi notifiche di nuovi messaggi</span>
+                                <a @click.prevent href="#" class="notifications_lower_text">Attiva notifiche desktop</a>
+                            </div>
+                        </div>
+                        <div class="search_chat_wrapper w-100 p_10 d-flex align-items-center">
+                            <div class="search_chat_subwrapper w-100 h-100 position-relative">
+                                <i class="search_icon_fix fas fa-search position-absolute fs-5"></i>
+                                <!-- La input mi permette di modellare chatFilterText in modo da visualizzare solo i contatti che contengono la lettera/parola che digito -->
+                                <input @keyup="contactsFilter" v-model="chatFilterText" class="search_input w-100 h-100 form-control form-control-sm py_10 fs-5" type="search" placeholder="Cerca o inizia una nuova chat">
+                            </div>
+                        </div>
+                        <div class="contacts_wrapper w-100">
+                            <ul class="aside_contacts_wrapper w-100 h-100 p-0">
+                                <!-- Queste li vengono stampate in base al numero di chat, al click viene cambiata la chat corrente, e se si usa la search input vengono stampate solo se contengono ciò che digito in input -->
+                                <li v-if="contactElement.visible" v-for="(contactElement, contactIndex) in chatsList" @click="switchChat(contactIndex)" class="contact_item d-flex py-3 ps-4" :class="{'clicked': contactIndex === currentActiveChat}">
+                                    <div class="user_img_box">
+                                        <!-- Immagine con sorgente e alt impostati per ogni chat dell'array in modo ciclico -->
+                                        <img :src="'img/avatar' + contactElement.avatar + '.jpg'" :alt="'Immagine profilo di ' + contactElement.name">
+                                    </div>
+                                    <span class="fs-4">{{contactElement.name}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+
+                    <!-- Chat -->
+                    <div class="chat_wrapper w_65 h-100 chat_bg">
+                        <div class="chat_content_wrapper w-100">
+                            <ul class="chat_messages_list p-0 d-flex flex-column">
+                                <!-- Elementi ciclati in base ai messaggi con l'utente selezionato e variano in base all'invio di utente o contatto  -->
+                                <li v-for="(chatElement, chatIndex) in chatsList[currentActiveChat].messages" class="chat_message_item mb-2" :class="{'user_message': chatElement.status === 'sent', 'contact_message': chatElement.status === 'received'}">
+                                    <div class="chat_message_wrapper ps-3 pe-1 pt-3 pb-1">
+                                        <span class="chat_text fs-4">{{chatElement.text}}</span>
+                                        <span class="d-block chat_date text-end fs-6">{{chatElement.date}}</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="chat_input_wrapper w-100 h_75p d-flex align-items-center">
+                            <i class="fs-4 far fa-smile"></i>
+                            <!-- Input che permette di inviare nuovi messaggi quando si schiaccia "Enter" -->
+                            <input @keyup.enter="newMessage" v-model="userMessage" type="text" class="form-control w_80 h_70" placeholder="Scrivi un messaggio">
+                            <i class="fs-4 fas fa-microphone"></i>
+                        </div>
+                    </div>
+                    
+                </main>
+
+            </div>
+            
+        </div>
+
+    </div>
+    
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script type="text/javascript" src="js/check-functions.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
