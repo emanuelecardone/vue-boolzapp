@@ -92,6 +92,9 @@ ul .user_img_box img{
     width: 75px;
     height: 75px;
 }
+.contact_name_last_msg span{
+    line-height: 30px;
+}
 
 /* Chat */
 .chat_bg{
