@@ -98,7 +98,8 @@ const app = new Vue(
             chatFilterText: '',
             getMessageClock: null,
             lastMsgMaxCharacters: 20,
-            showBox: false
+            showBox: false,
+            chatIndexShow: null
         },
 
         methods: {
@@ -142,7 +143,8 @@ const app = new Vue(
                 });
             },
             // Funzione per far apparire la box per il "Delete message" al click sulla arrow (toggle)
-            showDeleteBox: function(){
+            showDeleteBox: function(thisChatIndex){
+                this.chatIndexShow = thisChatIndex;
                 this.showBox = !this.showBox;
             },
             // Funzione per eliminare il messaggio selezionato al click su "Delete message"
