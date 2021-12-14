@@ -51,7 +51,7 @@
                                 <img :src="'img/avatar' + chatsList[currentActiveChat].avatar + '.jpg'" :alt="'Immagine profilo di ' + chatsList[currentActiveChat].name">
                             </div>
                             <div class="user_img_text_box d-flex flex-column justify-content-center">
-                                <span class="user_img_upper_text d-block fw-bolder fs-5">{{chatsList[currentActiveChat].name}}</span>
+                                <span class="user_img_upper_text d-block fw-bolder fs-4">{{chatsList[currentActiveChat].name}}</span>
                                 <span class="user_img_lower_text">Ultimo accesso oggi alle</span>
                             </div>
                         </div>
@@ -75,7 +75,7 @@
                                 <i class="fas fa-bell-slash fs-3"></i>
                             </div>
                             <div class="notifications_text_box d-flex flex-column justify-content-center">
-                                <span class="notifications_upper_text d-block fw-bolder fs-5">Ricevi notifiche di nuovi messaggi</span>
+                                <span class="notifications_upper_text d-block fw-bolder fs-4">Ricevi notifiche di nuovi messaggi</span>
                                 <a @click.prevent href="#" class="notifications_lower_text">Attiva notifiche desktop</a>
                             </div>
                         </div>
@@ -107,7 +107,7 @@
                                 <li v-for="(chatElement, chatIndex) in chatsList[currentActiveChat].messages" class="chat_message_item mb-2" :class="{'user_message': chatElement.status === 'sent', 'contact_message': chatElement.status === 'received'}">
                                     <div class="chat_message_wrapper ps-3 pe-1 pt-3 pb-1">
                                         <span class="chat_text fs-4">{{chatElement.text}}</span>
-                                        <span class="d-block mt-1 chat_date text-end fs-6">{{chatElement.date}}</span>
+                                        <span class="d-block chat_date text-end fs-6">{{chatElement.date}}</span>
                                     </div>
                                 </li>
                             </ul>
