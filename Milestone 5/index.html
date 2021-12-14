@@ -70,6 +70,7 @@
 
                     <!-- Aside -->
                     <aside class="contacts_wrapper w_35 h-100 bg-white">
+                        <!-- Notifications -->
                         <div class="notifications_wrapper w-100 py-3 ps-4 d-flex align-items-center">
                             <div class="notifications_img_box d-flex justify-content-center align-items-center w_75p h_75p bg-white">
                                 <i class="fas fa-bell-slash fs-3"></i>
@@ -79,6 +80,7 @@
                                 <a @click.prevent href="#" class="notifications_lower_text">Attiva notifiche desktop</a>
                             </div>
                         </div>
+                        <!-- Search -->
                         <div class="search_chat_wrapper w-100 p_10 d-flex align-items-center">
                             <div class="search_chat_subwrapper w-100 h-100 position-relative">
                                 <i class="search_icon_fix fas fa-search position-absolute fs-5"></i>
@@ -86,6 +88,7 @@
                                 <input @keyup="contactsFilter" v-model="chatFilterText" class="search_input w-100 h-100 form-control form-control-sm py_10 fs-5" type="search" placeholder="Cerca o inizia una nuova chat">
                             </div>
                         </div>
+                        <!-- Contacts -->
                         <div class="contacts_wrapper w-100">
                             <ul class="aside_contacts_wrapper w-100 h-100 p-0">
                                 <!-- Queste li vengono stampate in base al numero di chat, al click viene cambiata la chat corrente, e se si usa la search input vengono stampate solo se contengono ciò che digito in input -->
@@ -110,10 +113,12 @@
 
                     <!-- Chat -->
                     <div class="chat_wrapper w_65 h-100 chat_bg">
+                        <!-- Chat content -->
                         <div class="chat_content_wrapper w-100">
                             <ul class="chat_messages_list p-0 d-flex flex-column">
                                 <!-- Elementi ciclati in base ai messaggi con l'utente selezionato e variano in base all'invio di utente o contatto  -->
-                                <li v-for="(chatElement, chatIndex) in chatsList[currentActiveChat].messages" class="chat_message_item mb-2" :class="{'user_message': chatElement.status === 'sent', 'contact_message': chatElement.status === 'received'}">
+                                <li v-for="(chatElement, chatIndex) in chatsList[currentActiveChat].messages" class="chat_message_item mb-2 position-relative" :class="{'user_message': chatElement.status === 'sent', 'contact_message': chatElement.status === 'received'}">
+                                    <div class="triangle"></div>
                                     <div class="chat_message_wrapper ps-3 pe-1 pt-3 pb-1 position-relative">
                                         <!-- Il click sulla arrow mostrerà/nasconderà il box per cancellare il messaggio -->
                                         <i @click="showDeleteBox(chatIndex)" class="delete_msg_arrow fas fa-chevron-down position-absolute"></i>
@@ -128,6 +133,7 @@
                                 </li>
                             </ul>
                         </div>
+                        <!-- Chat input -->
                         <div class="chat_input_wrapper w-100 h_75p d-flex align-items-center">
                             <i class="fs-4 far fa-smile"></i>
                             <!-- Input che permette di inviare nuovi messaggi quando si schiaccia "Enter" -->
