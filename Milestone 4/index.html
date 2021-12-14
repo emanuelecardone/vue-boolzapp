@@ -70,7 +70,7 @@
 
                     <!-- Aside -->
                     <aside class="contacts_wrapper w_35 h-100 bg-white">
-                        <div class="notifications_wrapper w-100 h_10 ps-4 d-flex align-items-center">
+                        <div class="notifications_wrapper w-100 py-3 ps-4 d-flex align-items-center">
                             <div class="notifications_img_box d-flex justify-content-center align-items-center w_75p h_75p bg-white">
                                 <i class="fas fa-bell-slash fs-3"></i>
                             </div>
@@ -79,11 +79,11 @@
                                 <a @click.prevent href="#" class="notifications_lower_text">Attiva notifiche desktop</a>
                             </div>
                         </div>
-                        <div class="search_chat_wrapper w-100 h_5 p-2 d-flex align-items-center">
+                        <div class="search_chat_wrapper w-100 p_10 d-flex align-items-center">
                             <div class="search_chat_subwrapper w-100 h-100 position-relative">
-                                <i class="search_icon_fix fas fa-search position-absolute"></i>
+                                <i class="search_icon_fix fas fa-search position-absolute fs-5"></i>
                                 <!-- La input mi permette di modellare chatFilterText in modo da visualizzare solo i contatti che contengono la lettera/parola che digito -->
-                                <input @keyup="contactsFilter" v-model="chatFilterText" class="search_input w-100 h-100 form-control form-control-sm" type="search" placeholder="Cerca o inizia una nuova chat">
+                                <input @keyup="contactsFilter" v-model="chatFilterText" class="search_input w-100 h-100 form-control form-control-sm py_10 fs-5" type="search" placeholder="Cerca o inizia una nuova chat">
                             </div>
                         </div>
                         <div class="contacts_wrapper w-100">

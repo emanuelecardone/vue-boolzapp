@@ -24,7 +24,7 @@ ul{
 
 /* HEADER */
 header{
-    height: 7.5%;
+    height: 85px;
 }
 /* Left Header */
 .left_header_user_wrapper{
@@ -46,7 +46,7 @@ header{
 
 /* MAIN */
 main{
-    height: 92.5%;
+    height: calc(100% - 85px);
 }
 /* Notifications */
 .notifications_wrapper{
@@ -65,11 +65,11 @@ main{
     background-color: #fafafa;
 }
 .search_input{
-    padding-left: 7.5%;
+    padding-left: 10%;
 }
 .search_icon_fix{
     top: 50%;
-    left: 2.5%;
+    left: calc(5% - .5rem);
     transform: translateY(-50%);
     color: #bfc1c4;
 }
@@ -93,7 +93,7 @@ ul .user_img_box img{
 /* Chat */
 .chat_bg{
     background-image: url(../img/mine.jpg);
-    background-size: contain;
+    background-size: 50%;
     background-repeat: repeat;
 }
 .chat_content_wrapper{
