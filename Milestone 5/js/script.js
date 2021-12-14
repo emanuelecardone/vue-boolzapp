@@ -98,8 +98,7 @@ const app = new Vue(
             chatFilterText: '',
             getMessageClock: null,
             lastMsgMaxCharacters: 20,
-            showBox: false,
-            chatIndexShow: null
+            deleteBoxClass: 'd-none'
         },
 
         methods: {
@@ -143,17 +142,14 @@ const app = new Vue(
                 });
             },
             // Funzione per far apparire la box per il "Delete message" al click sulla arrow (toggle)
-            showDeleteBox: function(thisChatIndex){
-                // Per evitare di aprire tutti i box, verrà aperto quello che corrisponde col chatIndexShow
-                this.chatIndexShow = thisChatIndex;
-                this.showBox = !this.showBox;
+            showDeleteBox: function(){
+                
+                
             },
             // Funzione per eliminare il messaggio selezionato al click su "Delete message"
             // Mi prendo l'indice del messaggio per far capire a splice l'indice del messaggio da eliminare
             deleteMessage: function(thisChatIndex){
                 this.chatsList[this.currentActiveChat].messages.splice(thisChatIndex,1);
-                // Debug per evitare che la tendina rimanga aperta sul messaggio successivo al delete di uno
-                this.chatIndexShow = null;
             }
         },
 
