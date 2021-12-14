@@ -38,12 +38,12 @@ ul{
 .user_message .triangle{
     border-left: 20px solid #d5f9ba;
     border-top-right-radius: 5px;
-    left: 99%;
+    left: 98%;
 }
 .contact_message .triangle{
     border-right: 20px solid white;
     border-top-left-radius: 5px;
-    right: 99%;
+    right: 98%;
 }
 
 
