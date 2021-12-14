@@ -32,7 +32,7 @@
                             <div class="user_img_box">
                                 <img src="img/avatar_io.jpg" alt="Immagine profilo utente">
                             </div>
-                            <span class="user_img_text">
+                            <span class="user_img_text fs-4">
                                 Nome Utente
                             </span>
                         </div>
@@ -94,7 +94,7 @@
                                         <!-- Immagine con sorgente e alt impostati per ogni chat dell'array in modo ciclico -->
                                         <img :src="'img/avatar' + contactElement.avatar + '.jpg'" :alt="'Immagine profilo di ' + contactElement.name">
                                     </div>
-                                    <span class="fs-5">{{contactElement.name}}</span>
+                                    <span class="fs-4">{{contactElement.name}}</span>
                                 </li>
                             </ul>
                         </div>
@@ -107,8 +107,8 @@
                                 <!-- Elementi ciclati in base ai messaggi con l'utente selezionato e variano in base all'invio di utente o contatto  -->
                                 <li v-for="(chatElement, chatIndex) in chatsList[currentActiveChat].messages" class="chat_message_item mb-2" :class="{'user_message': chatElement.status === 'sent', 'contact_message': chatElement.status === 'received'}">
                                     <div class="chat_message_wrapper ps-3 pe-1 pt-3 pb-1">
-                                        <span class="chat_text">{{chatElement.text}}</span>
-                                        <span class="d-block mt-1 chat_date text-end">{{chatElement.date}}</span>
+                                        <span class="chat_text fs-4">{{chatElement.text}}</span>
+                                        <span class="d-block mt-1 chat_date text-end fs-6">{{chatElement.date}}</span>
                                     </div>
                                 </li>
                             </ul>

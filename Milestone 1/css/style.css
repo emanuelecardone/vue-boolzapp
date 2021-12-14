@@ -1,4 +1,7 @@
 /* COMMON */
+body{
+    font-size: 1.25rem;
+}
 .app-container{
     background: linear-gradient(#009688 15%, #dddbd1, #d2dbdb 15%);
     min-width: 950px;
@@ -14,8 +17,8 @@
     align-items: center;
 }
 .user_img_box img{
-    width: 50px;
-    height: 50px;
+    width: 65px;
+    height: 65px;
 }
 ul{
     list-style-type: none;
@@ -24,7 +27,7 @@ ul{
 
 /* HEADER */
 header{
-    height: 85px;
+    height: 90px;
 }
 /* Left Header */
 .left_header_user_wrapper{
@@ -46,7 +49,7 @@ header{
 
 /* MAIN */
 main{
-    height: calc(100% - 85px);
+    height: calc(100% - 90px);
 }
 /* Notifications */
 .notifications_wrapper{
@@ -86,8 +89,8 @@ main{
     background-color: #e9ebea;
 }
 ul .user_img_box img{
-    width: 60px;
-    height: 60px;
+    width: 75px;
+    height: 75px;
 }
 
 /* Chat */
@@ -118,7 +121,6 @@ ul .user_img_box img{
     align-self: flex-start;
 }
 .chat_date{
-    font-size: 10px;
     color: #c0c3c5;
 }
 .chat_input_wrapper{
