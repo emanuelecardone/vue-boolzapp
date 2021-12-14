@@ -115,12 +115,9 @@
                                 <!-- Elementi ciclati in base ai messaggi con l'utente selezionato e variano in base all'invio di utente o contatto  -->
                                 <li v-for="(chatElement, chatIndex) in chatsList[currentActiveChat].messages" class="chat_message_item mb-2" :class="{'user_message': chatElement.status === 'sent', 'contact_message': chatElement.status === 'received'}">
                                     <div class="chat_message_wrapper ps-3 pe-1 pt-3 pb-1 position-relative">
+                                        <i class="delete_msg_arrow fas fa-chevron-down position-absolute"></i>
                                         <span class="chat_text fs-4">{{chatElement.text}}</span>
                                         <span class="d-block chat_date text-end fs-6">{{chatElement.date}}</span>
-                                        <!-- Metto la arrow in un div per fixare le sovrapposizioni tramite un cerchio sotto la arrow con z-index più alto del resto -->
-                                        <div class="delete_msg_arrow_wrapper w_30p h_30p d-flex justify-content-center align-items-center position-absolute">
-                                            <i class="delete_msg_arrow fas fa-chevron-down"></i>
-                                        </div>
                                     </div>
                                 </li>
                             </ul>
