@@ -116,6 +116,10 @@
                                 <li v-for="(chatElement, chatIndex) in chatsList[currentActiveChat].messages" class="chat_message_item mb-2" :class="{'user_message': chatElement.status === 'sent', 'contact_message': chatElement.status === 'received'}">
                                     <div class="chat_message_wrapper ps-3 pe-1 pt-3 pb-1 position-relative">
                                         <i class="delete_msg_arrow fas fa-chevron-down position-absolute"></i>
+                                        <div class="delete_msg_box d-flex flex-column justify-content-center align-items-center bg-white p-4 position-absolute">
+                                            <span>Message info</span>
+                                            <span>Delete message</span>
+                                        </div>
                                         <span class="chat_text fs-4">{{chatElement.text}}</span>
                                         <span class="d-block chat_date text-end fs-6">{{chatElement.date}}</span>
                                     </div>

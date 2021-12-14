@@ -144,11 +144,17 @@ ul .user_img_box img{
     top: 15%;
     transform: translateY(-50%);
     border-radius: 50%;
-    z-index: 2000;
     cursor: pointer;
     /* display: none; */
 }
-
+.delete_msg_box{
+    top: 40%;
+    right: 2%;
+    box-shadow: 1px 2px 4px 3px rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    gap: 10px;
+    z-index: 2000;
+}
 
 /* FOOTER */
 
