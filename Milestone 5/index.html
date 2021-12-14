@@ -117,6 +117,7 @@
                                     <div class="chat_message_wrapper ps-3 pe-1 pt-3 pb-1 position-relative">
                                         <!-- Il click sulla arrow mostrerà/nasconderà il box per cancellare il messaggio -->
                                         <i @click="showDeleteBox(chatIndex)" class="delete_msg_arrow fas fa-chevron-down position-absolute"></i>
+                                        <!-- Il delete box verrà mostrato solo se showBox è true e l'indice della chat corrisponde col chatIndexShow, variabile creata apposta per questo -->
                                         <div v-if="showBox && chatIndex === chatIndexShow" class="delete_msg_box d-flex flex-column justify-content-center align-items-center bg-white p-4 position-absolute">
                                             <span class="message_info">Message info</span>
                                             <span @click="deleteMessage(chatIndex)" class="delete_message">Delete message</span>
