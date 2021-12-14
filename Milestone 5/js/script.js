@@ -96,7 +96,8 @@ const app = new Vue(
             contactClicked: false,
             userMessage: '',
             chatFilterText: '',
-            getMessageClock: null
+            getMessageClock: null,
+            lastMsgMaxCharacters: 20
         },
 
         methods: {

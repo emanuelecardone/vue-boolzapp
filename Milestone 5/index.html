@@ -96,7 +96,9 @@
                                     </div>
                                     <div class="contact_name_last_msg d-flex flex-column">
                                         <span class="fs-4">{{contactElement.name}}</span>
-                                        <span class="last_msg">{{contactElement.messages[contactElement.messages.length - 1].text}} ...</span>
+                                        <span class="last_msg">
+                                            {{contactElement.messages[contactElement.messages.length - 1].text.substring(0, lastMsgMaxCharacters)}} ...
+                                        </span>
                                     </div>
                                 </li>
                             </ul>
