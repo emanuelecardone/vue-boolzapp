@@ -144,6 +144,11 @@ const app = new Vue(
             // Funzione per far apparire la box per il "Delete message" al click sulla arrow (toggle)
             showDeleteBox: function(){
                 this.showBox = !this.showBox;
+            },
+            // Funzione per eliminare il messaggio selezionato al click su "Delete message"
+            // Mi prendo l'indice del messaggio per far capire a splice l'indice del messaggio da eliminare
+            deleteMessage: function(thisChatIndex){
+                this.chatsList[this.currentActiveChat].messages.splice(thisChatIndex,1);
             }
         },
 

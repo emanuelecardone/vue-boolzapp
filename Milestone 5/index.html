@@ -117,9 +117,9 @@
                                     <div class="chat_message_wrapper ps-3 pe-1 pt-3 pb-1 position-relative">
                                         <!-- Il click sulla arrow mostrerà/nasconderà il box per cancellare il messaggio -->
                                         <i @click="showDeleteBox" class="delete_msg_arrow fas fa-chevron-down position-absolute"></i>
-                                        <div class="delete_msg_box flex-column justify-content-center align-items-center bg-white p-4 position-absolute" :class="{'d-flex': showBox, 'd-none': showBox === false}">
-                                            <span>Message info</span>
-                                            <span>Delete message</span>
+                                        <div v-if="showBox" class="delete_msg_box d-flex flex-column justify-content-center align-items-center bg-white p-4 position-absolute">
+                                            <span class="message_info">Message info</span>
+                                            <span @click="deleteMessage(chatIndex)" class="delete_message">Delete message</span>
                                         </div>
                                         <span class="chat_text fs-4">{{chatElement.text}}</span>
                                         <span class="d-block chat_date text-end fs-6">{{chatElement.date}}</span>

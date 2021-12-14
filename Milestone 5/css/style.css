@@ -155,6 +155,9 @@ ul .user_img_box img{
     gap: 10px;
     z-index: 2000;
 }
+.delete_message{
+    cursor: pointer;
+}
 
 /* FOOTER */
 
