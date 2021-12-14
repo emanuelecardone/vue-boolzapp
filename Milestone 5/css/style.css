@@ -145,7 +145,7 @@ ul .user_img_box img{
     transform: translateY(-50%);
     border-radius: 50%;
     cursor: pointer;
-    /* display: none; */
+    display: none;
 }
 .delete_msg_box{
     top: 40%;
