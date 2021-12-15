@@ -106,9 +106,9 @@
                             <ul class="chat_messages_list p-0 d-flex flex-column">
                                 <!-- Elementi ciclati in base ai messaggi con l'utente selezionato e variano in base all'invio di utente o contatto  -->
                                 <li v-for="(chatElement, chatIndex) in chatsList[currentActiveChat].messages" class="chat_message_item mb-2 position-relative" :class="{'user_message': chatElement.status === 'sent', 'contact_message': chatElement.status === 'received'}">
-                                    <!-- Il triangolo avrà display none se lo status del messaggio precedente è uguale allo status attuale
+                                    <!-- Il triangolo verrà stampato se l'indice è 0 oppure lo status del messaggio precedente è diverso dallo status attuale
                                     Ciò farà si che l'effetto vignetta sia dato solo al primo messaggio di ogni cambio status come da screenshot -->
-                                    <div class="triangle" :class="{'d-none': chatIndex > 0 && chatElement.status === chatsList[currentActiveChat].messages[chatIndex - 1].status }"></div>
+                                    <div v-if="chatIndex === 0 || (chatElement.status !== chatsList[currentActiveChat].messages[chatIndex - 1].status)" class="triangle"></div>
                                     <div class="chat_message_wrapper ps-3 pe-1 pt-3 pb-1">
                                         <span class="chat_text fs-4">{{chatElement.text}}</span>
                                         <span class="d-block chat_date text-end fs-6">{{chatElement.date}}</span>
