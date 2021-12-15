@@ -48,7 +48,8 @@
                         <div class="right_header_user_wrapper d-flex align-items-center">
                             <div class="user_img_box">
                                 <!-- La sorgente viene presa dalla foto utente della chat attiva, idem per l'alt -->
-                                <img :src="getSource(chatsList[currentActiveChat].avatar)" :alt="getAlt(chatsList[currentActiveChat].name)">
+                                <img v-if="chatsList.length > 0" :src="getSource(chatsList[currentActiveChat].avatar)" :alt="getAlt(chatsList[currentActiveChat].name)">
+                                <div v-else>Aggiungi il tuo primo contatto</div>
                             </div>
                             <div class="user_img_text_box d-flex flex-column justify-content-center">
                                 <span class="user_img_upper_text d-block fw-bolder fs-4">{{chatsList[currentActiveChat].name}}</span>
