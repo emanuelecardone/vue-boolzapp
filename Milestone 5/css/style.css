@@ -32,18 +32,18 @@ ul{
 .triangle {
     width: 0; 
     height: 0; 
-    border-bottom: 30px solid transparent;
+    border-bottom: 42px solid transparent;
     position: absolute;
 }
 .user_message .triangle{
-    border-left: 20px solid #d5f9ba;
+    border-left: 28px solid #d5f9ba;
     border-top-right-radius: 5px;
-    left: 98%;
+    right: -12.5px;
 }
 .contact_message .triangle{
-    border-right: 20px solid white;
+    border-right: 28px solid white;
     border-top-left-radius: 5px;
-    right: 98%;
+    left: -12.5px;
 }
 
 
@@ -145,12 +145,10 @@ ul .user_img_box img{
     max-width: 90%;
 }
 .user_message{
-    border-top-right-radius: 0%;
     background-color: #d5f9ba;
     align-self: flex-end;
 }
 .contact_message{
-    border-top-left-radius: 0%;
     background-color: white;
     align-self: flex-start;
 }
