@@ -131,6 +131,8 @@ const app = new Vue(
             // Funzione per cambiare chat attiva
             switchChat: function(thisContactIndex){
                 this.currentActiveChat = thisContactIndex;
+                // Debug per evitare che la tendina rimanga aperta su un altro messaggio al click su un'altra chat
+                this.chatIndexShow = null;
             },
             // Funzione per cercare i contatti tramite filtro
             contactsFilter: function(){
