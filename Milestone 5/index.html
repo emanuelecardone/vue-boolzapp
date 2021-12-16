@@ -105,6 +105,7 @@
                                                 <!-- Nello span verrà stampato il testo dell'ultimo elemento della key "messages" fino a un massimo di 20 caratteri (grazie al substring) -->
                                                 {{contactElement.messages[contactElement.messages.length - 1].text.substring(0, lastMsgMaxCharacters)}} ...
                                             </span>
+                                            <span v-else class="last_msg fs-6">Nessun messaggio con questo contatto</span>
                                         </div>
                                         <!-- Nello span verrà stampata la data dell'ultimo elemento della key "messages" -->
                                         <span v-if="chatsList[contactIndex].messages.length > 0" class="last_msg_date position-absolute fs-6">{{contactElement.messages[contactElement.messages.length - 1].date}}</span>
@@ -124,7 +125,7 @@
                                     <!-- Il triangolo verrà stampato se l'indice è 0 oppure lo status del messaggio precedente è diverso dallo status attuale
                                     Ciò farà si che l'effetto vignetta sia dato solo al primo messaggio di ogni cambio status come da screenshot -->
                                     <div v-if="chatIndex === 0 || (chatElement.status !== chatsList[currentActiveChat].messages[chatIndex - 1].status)" class="triangle"></div>
-                                    <div v-if="chatsList[currentActiveChat].messages.length > 0" class="chat_message_wrapper ps-3 pe-1 pt-3 pb-1 position-relative">
+                                    <div class="chat_message_wrapper ps-3 pe-1 pt-3 pb-1 position-relative">
                                         <!-- Il click sulla arrow mostrerà/nasconderà il box per cancellare il messaggio -->
                                         <i @click="showDeleteBox(chatIndex)" class="delete_msg_arrow fas fa-chevron-down position-absolute"></i>
                                         <!-- Il delete box verrà mostrato solo se showBox è true e l'indice della chat corrisponde col chatIndexShow, variabile creata apposta per questo -->
