@@ -101,13 +101,13 @@
                                         </div>
                                         <div class="contact_name_last_msg d-flex flex-column">
                                             <span class="fs-4">{{contactElement.name}}</span>
-                                            <span v-if="chatsList[currentActiveChat].messages.length > 0" class="last_msg fs-6">
+                                            <span v-if="chatsList[contactIndex].messages.length > 0" class="last_msg fs-6">
                                                 <!-- Nello span verrà stampato il testo dell'ultimo elemento della key "messages" fino a un massimo di 20 caratteri (grazie al substring) -->
                                                 {{contactElement.messages[contactElement.messages.length - 1].text.substring(0, lastMsgMaxCharacters)}} ...
                                             </span>
                                         </div>
                                         <!-- Nello span verrà stampata la data dell'ultimo elemento della key "messages" -->
-                                        <span v-if="chatsList[currentActiveChat].messages.length > 0" class="last_msg_date position-absolute fs-6">{{contactElement.messages[contactElement.messages.length - 1].date}}</span>
+                                        <span v-if="chatsList[contactIndex].messages.length > 0" class="last_msg_date position-absolute fs-6">{{contactElement.messages[contactElement.messages.length - 1].date}}</span>
                                     </li>
                                 </template>
                             </ul>
